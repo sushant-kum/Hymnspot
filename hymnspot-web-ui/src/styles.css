@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('assets/fonts/raleway/Raleway-Regular.eot');
+    /* IE9 Compat Modes */
+    src: url('assets/fonts/raleway/Raleway-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/raleway/Raleway-Regular.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/raleway/Raleway-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/raleway/Raleway-Regular.svg#svgFontName') format('svg');
+    /* Legacy iOS */
+}
+
+* {
+    font-family: 'Raleway', 'Arial';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+app-recorder {
+    overflow: hidden;
+}
+
+.tooltip {
+    position: relative;
+    /* display: inline-block; */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333333 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
