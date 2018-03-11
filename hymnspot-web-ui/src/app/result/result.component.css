@@ -1,0 +1,16 @@
+#resultContent {
+    position: absolute;
+    top: 70px;
+    height: calc(100vh - 70px);
+    width: 100%;
+    overflow: auto;
+}
+
+.resultCard {
+    width: calc(100% - 33px);
+}
+
+.albumArt {
+    width: 100%;
+    transition-duration: 0.5s;
+}

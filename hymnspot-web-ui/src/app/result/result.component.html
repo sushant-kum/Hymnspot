@@ -1,3 +1,32 @@
-<p>
-  result works!
-</p>
+<div id="resultContent">
+    <div class="w3-row">
+        <div class="w3-col m3">
+            <div class="w3-padding-small">
+                <div class="w3-card w3-round-small w3-theme-action w3-padding-4-all w3-center">
+                        <span class="w3-text-theme w3-margin">Album Art</span>
+                    <img [hidden]="!result.albumArtUrl" src="{{result.albumArtUrl}}" class="albumArt" />
+                    <img [hidden]="result.albumArtUrl" src="/assets/img/vinyl.png" class="albumArt" />
+                </div>
+            </div>
+        </div>
+        <div class="w3-col m9">
+            <div class="w3-padding-small">
+                <div class="w3-card w3-round-small w3-theme-action w3-padding">
+                    <mat-list>
+                        <mat-list-item class="w3-text-white">
+                            <span class="w3-text-theme">Song</span>&nbsp;{{result.song}}
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item class="w3-text-white">
+                                <span class="w3-text-theme">Album</span>&nbsp;{{result.album}}
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item class="w3-text-white">
+                                <span class="w3-text-theme">Author</span>&nbsp;{{result.author}}
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -92,7 +92,7 @@ AUDIO.VISUALIZER = (function () {
      */
     Visualizer.prototype.setBufferSourceNode = function () {
         var _this = this;
-        navigator.mediaDevices.getUserMedia ({audio: true, video: false})
+        navigator.mediaDevices.getUserMedia ({audio: true})
         .then(function(stream) {
             _this.sourceNode = _this.ctx.createMediaStreamSource(stream);
             _this.sourceNode.loop = _this.loop;
@@ -107,6 +107,7 @@ AUDIO.VISUALIZER = (function () {
                 _this.sourceNode = _this.ctx.createMediaStreamSource(stream);
             }.bind(_this);
         })
+        .catch(function(err) { alert(err.name + ": " + err.message); });
         
         // this.sourceNode = this.ctx.createBufferSource();
         // this.sourceNode.loop = this.loop;
@@ -255,9 +256,9 @@ AUDIO.VISUALIZER = (function () {
             var alfa = (i * 2 * Math.PI ) / maxBarNum;
             var beta = (3 * 45 - this.barWidth) * Math.PI / 180;
             var x = 0;
-            var y = radius - (amplitude / 12 - this.barHeight);
+            var y = radius - (amplitude / 10 - this.barHeight);
             var w = this.barWidth;
-            var h = amplitude / 6 + this.barHeight;
+            var h = amplitude / 5 + this.barHeight;
 
             this.canvasCtx.save();
             this.canvasCtx.translate(cx, cy);

@@ -4,22 +4,115 @@
 }
 
 #logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     position: fixed;
-    top: calc(50% - 250px);
-    left: calc(50% - 80px);
+    top: calc(50% - 200px);
+    left: calc(50% - 55px);
     z-index: 300;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    transition-timing-function: ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #logo.result-section {
-    width: 50px;
+    width: 166.8px;
     height: 50px;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 90px;
+    cursor: pointer;
+}
+
+.sidebar-menu-item {
+    cursor: pointer;
+    height: 56px !important;
+}
+
+.sidenav-icon-holder {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    background: #C61777;
+}
+
+.sidenav-icon {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+}
+
+.sidenav-text {
+    margin-left: 56px;
+}
+
+.meta {
+    z-index: 600;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: calc(100vw - 72px);
+    display: none;
+    overflow: auto;
+    background: #e91e63;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #e91e63 0%, #880769 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #e91e63 0%, #880769 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #e91e63 0%, #880769 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e91e63', endColorstr='#880769', GradientType=1);
+    /* IE6-9 */
+}
+
+.close-icon {
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transform: rotate(90deg);
+    transition: all 0.5s ease-in-out;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.close-icon:after, .close-icon:before {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+    border-radius: 2px;
+    background: #fff;
+    width: 15px;
+    height: 3px;
+    top: 13.5px;
+}
+
+.close-icon:after {
+    transform: rotate(45deg);
+    left: 3px;
+}
+
+.close-icon:before {
+    right: 3px;
+    transform: rotate(-45deg);
+}
+
+.close-icon:hover:after {
+    width: 100%;
+    left: 0;
+    top: 13.5px;
+    transform: rotate(-135deg);
+}
+
+.close-icon:hover:before {
+    width: 100%;
+    right: 0;
+    top: 13.5px;
+    transform: rotate(135deg);
 }
 
 #visualCanvas {
@@ -34,12 +127,11 @@
     right: 10px;
 }
 
-app-result  {
-    background-color: #333;
+app-result {
+    background-color: #212121;
     color: white;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    transition-timing-function: ease-in-out;
+    /* -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; */
 }
 
 app-result.not-displayed {
@@ -56,12 +148,39 @@ app-result.not-displayed {
 app-result.displayed {
     z-index: 200;
     position: fixed;
-    left: 0;
+    /* left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    border-radius: 0%;
+    border-radius: 0%; */
     overflow: hidden;
+    animation: expand 300ms ease-in-out infinite;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+    0% {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        left: calc(50% - 5px);
+        top: calc(50% - 5px);
+    }
+    35% {
+        width: 100vh;
+        height: 100vh;
+        border-radius: 50%;
+        left: calc(50% - 50vh);
+        top: calc(50% - 50vh);
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        left: 0;
+        top: 0;
+    }
 }
 
 @-webkit-keyframes to_24 {
@@ -2436,6 +2555,7 @@ app-result.displayed {
     animation-iteration-count: 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    background: #212121;
 }
 
 .record-container #btn:checked~.time {
