@@ -1,39 +1,18 @@
-// document.onreadystatechange = function (e) {
-//     console.log(document.readyState);
-//     if (document.readyState == "interactive") {
-//         document.getElementById("loader-img").style.display = "block";
-//         var bar1 = new ProgressBar.Path('#animated-path1', {
-//             easing: 'easeOut',
-//             duration: 1400
-//         });
-//         bar1.set(0);
-//         bar1.animate(1.0);
-
-//         var bar2 = new ProgressBar.Path('#animated-path2', {
-//             easing: 'easeInOut',
-//             duration: 1400
-//         });
-//         bar2.set(0);
-//         bar2.animate(1.0);
-//     }
-// }
 $(document).ready(function () {
-    if (document.readyState == "interactive") {
-    document.getElementById("loader-img").style.display = "block";
-    var bar1 = new ProgressBar.Path('#animated-path1', {
-        easing: 'easeOut',
-        duration: 1400
-    });
-    bar1.set(0);
-    bar1.animate(1.0);
+    document.getElementById("loader-svg").style.display = "block";
 
-    var bar2 = new ProgressBar.Path('#animated-path2', {
+    var bar = new ProgressBar.Path('#animated-path', {
         easing: 'easeInOut',
         duration: 1400
     });
-    bar2.set(0);
-    bar2.animate(1.0);
-}
+    bar.set(0);
+    bar.animate(1.0);
+    setTimeout(function() {
+        $("#loader-overlay").fadeOut();
+    }, 1500);
+    setTimeout(function() {
+        $("#loader").fadeOut();
+    }, 3000);
 });
 
 sidebar = document.getElementById("sidebar");

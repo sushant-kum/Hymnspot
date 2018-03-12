@@ -50,15 +50,41 @@ body {
     padding: 0;
 }
 
-#loader-overlay {
-    z-index: 1000;
+#loader-underlay {
+    z-index: 999;
     background: white;
     width: 100vw;
     height: 100vh;
     position: fixed;
 }
 
-#loader-overlay #loader-img {
+#loader-overlay {
+    z-index: 1000;
+    background: #840668;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #840668 0%, #840668 40%, #db1d7c 60%, #db1d7c 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #840668 0%, #840668 40%, #db1d7c 60%, #db1d7c 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #840668 0%, #840668 40%, #db1d7c 60%, #db1d7c 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#840668', endColorstr='#db1d7c', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    transition: all 3s;
+}
+
+#loader-underlay #loader-img {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+}
+
+#loader-overlay #loader-svg {
     position: fixed;
     height: 150px;
     width: 150px;
