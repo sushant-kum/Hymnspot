@@ -64,6 +64,7 @@ body {
     width: 150px;
     top: calc(50% - 75px);
     left: calc(50% - 75px);
+    display: none;
 }
 
 app-recorder {
