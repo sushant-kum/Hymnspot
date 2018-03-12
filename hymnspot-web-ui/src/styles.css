@@ -1,5 +1,4 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 @font-face {
     font-family: 'Raleway';
     src: url('assets/fonts/raleway/Raleway-Regular.eot');
@@ -15,27 +14,27 @@
     display: none;
     height: 13px;
     border-radius: 0px;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
- ::-webkit-scrollbar-button:hover {
-    background-color: rgba(0,0,0,0);
+::-webkit-scrollbar-button:hover {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #D01B76;
 }
 
- ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: #880769;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
- ::-webkit-scrollbar-track:hover {
-    background-color: rgba(0,0,0,0);
+::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar {
@@ -51,25 +50,20 @@ body {
     padding: 0;
 }
 
-.hamburger {
+#loader-overlay {
+    z-index: 1000;
+    background: white;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 500;
-    -webkit-transition: all 0.4s !important;
-    transition: all 0.4s !important;
 }
 
-.w3-sidebar {
-    width: 250px !important;
-    z-index: 500;
-    display: none;
-    overflow-x: hidden;
-}
-
-.w3-overlay {
-    z-index: 400;
-    cursor: pointer;
+#loader-overlay #loader-img {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
 }
 
 app-recorder {

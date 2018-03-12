@@ -1,3 +1,33 @@
+document.onreadystatechange = function(e)
+{
+  if(document.readyState=="interactive")
+  {
+    var bar1 = new ProgressBar.Path('#animated-path1', {
+        easing: 'easeOut',
+        duration: 1400
+    });
+    bar1.set(0);
+    bar1.animate(1.0);
+    
+    var bar2 = new ProgressBar.Path('#animated-path2', {
+        easing: 'easeInOut',
+        duration: 1400
+    });
+    bar2.set(0);
+    bar2.animate(1.0);
+  }
+}
+// $(document).ready(function () {
+//     var bar = new ProgressBar.Path('#animated-path', {
+//         easing: 'easeInOut',
+//         duration: 1400
+//     });
+
+
+//     bar.set(0);
+//     bar.animate(1.0);
+// });
+
 sidebar = document.getElementById("sidebar");
 overlay = document.getElementsByClassName("w3-overlay")[0];
 hamburger = document.getElementsByClassName("hamburger")[0];
