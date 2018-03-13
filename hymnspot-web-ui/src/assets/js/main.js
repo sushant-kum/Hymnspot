@@ -11,7 +11,7 @@ $(document).ready(function () {
         $("#loader-overlay").fadeOut();
     }, 1500);
     setTimeout(function() {
-        $("#loader").fadeOut();
+        $("#loader").fadeOut(50);
     }, 3000);
 });
 
