@@ -9,7 +9,12 @@ import { AUDIO } from '../assets/js/visualizer.js';
 export class AppComponent {
   title = 'app';
   chk = false;
-  songResult = {};
+  songResult = {
+    albumArtUrl: "",
+    song: "",
+    album: "",
+    author: ""
+  };
   chkchanged = (e) => {
     if (this.chk == true) {
       document.getElementById("record-btn-tooltiptext").style.visibility = "hidden";
