@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AUDIO } from '../assets/js/visualizer.js';
+import { SongResult } from './SongResult.class.js';
 
 @Component({
   selector: 'app-recorder',
@@ -9,11 +10,11 @@ import { AUDIO } from '../assets/js/visualizer.js';
 export class AppComponent {
   title = 'app';
   chk = false;
-  songResult = {
-    albumArtUrl: "",
-    song: "",
-    album: "",
-    author: ""
+  songResult: SongResult = {
+    albumArtUrl: "/assets/img/album_art/hybrid-theory.jpg",
+    song: "Papercut",
+    album: "Hybrid Theory",
+    author: "Linkin Park"
   };
   chkchanged = (e) => {
     if (this.chk == true) {
@@ -40,19 +41,16 @@ export class AppComponent {
     var result = document.getElementsByTagName("app-result")[0];
     result.classList.remove("not-displayed");
     result.classList.add("displayed");
-    //var logo: HTMLImageElement;
     var logo = document.getElementById("logo");
     (<HTMLImageElement>logo).src = "/assets/img/logo/hymnspot-full-min.png";
     logo.classList.add("result-section");
     logo.addEventListener("click", function (e) {
       location.href = "/";
     })
-    this.songResult = {
-      albumArtUrl: "/assets/img/album_art/hybrid-theory.jpg",
-      song: "Papercut",
-      album: "Hybrid Theory",
-      author: "Linkin Park"
-    }
+    this.songResult.albumArtUrl = "/assets/img/album_art/hybrid-theory.jpg";
+    this.songResult.song = "Papercut";
+    this.songResult.album = "Hybrid Theory";
+    this.songResult.author = "Linkin Park"
   }
   showMeta = (section) => {
     var metas = document.getElementsByClassName("meta");
