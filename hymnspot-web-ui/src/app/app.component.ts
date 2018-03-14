@@ -42,12 +42,12 @@ export class AppComponent {
     result.classList.remove("not-displayed");
     result.classList.add("displayed");
     var logo = document.getElementById("logo");
-    (<HTMLImageElement>logo).src = "/assets/img/logo/hymnspot-full-min.png";
+    (<HTMLImageElement>logo).src = "assets/img/logo/hymnspot-full-min.png";
     logo.classList.add("result-section");
     logo.addEventListener("click", function (e) {
       location.href = "/";
     })
-    this.songResult.albumArtUrl = "/assets/img/album_art/hybrid-theory.jpg";
+    this.songResult.albumArtUrl = "assets/img/album_art/hybrid-theory.jpg";
     this.songResult.song = "Papercut";
     this.songResult.album = "Hybrid Theory";
     this.songResult.author = "Linkin Park"
