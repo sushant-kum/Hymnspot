@@ -3,7 +3,8 @@
     <mat-list style="padding:0;">
       <mat-list-item></mat-list-item>
     </mat-list>
-    <img src="/assets/img/logo/hymnspot-span-min.png" style="width: calc(100% - 10px); cursor: pointer;" onclick="location.href='/';" />
+    <img src="assets/img/logo/hymnspot-span-min.png" style="width: calc(100% - 10px); cursor: pointer;" onclick="location.href='/';"
+    />
     <mat-list style="padding:0;">
       <mat-list-item></mat-list-item>
       <mat-list-item id="songsMenu" class="w3-text-theme w3-hover-theme w3-hover-text-white sidebar-menu-item" (click)="showMeta('songs')">
@@ -40,7 +41,7 @@
     About
   </div>
 
-  <img id="logo" src="/assets/img/logo/hymnspot-min.png" />
+  <img id="logo" src="assets/img/logo/hymnspot-min.png" />
   <canvas id="visualCanvas" width="400" height="400"></canvas>
   <div class="record-container tooltip">
     <input type="checkbox" id="btn" [(ngModel)]="chk" [disabled]="chk" (change)="chkchanged($event)" />
