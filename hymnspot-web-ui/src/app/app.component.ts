@@ -45,7 +45,7 @@ export class AppComponent {
     (<HTMLImageElement>logo).src = "assets/img/logo/hymnspot-full-min.png";
     logo.classList.add("result-section");
     logo.addEventListener("click", function (e) {
-      location.href = "/";
+      location.href = ".";
     })
     this.songResult.albumArtUrl = "assets/img/album_art/hybrid-theory.jpg";
     this.songResult.song = "Papercut";
